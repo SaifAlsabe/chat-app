@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lobbyStyle.css">
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <title>Chat App</title>
+</head>
+
+<body>
+
+    <div class="lobby-container">
+
+
+        <header class="header">
+            <h1><a href="/">Linkus</a></h1>
+        </header>
+
+
+        <main class="main">
+
+            <div class="intro">
+                <h1>No need to signup!</h1>
+            </div>
+
+            <div class="form-container">
+                <h1>Create a room and start chatting</h1>
+                <form action="/room" method="POST">
+                    <label for="room">Room name:</label>
+                    <input required type="text" name="room" id="room" autocomplete="off" />
+                    <button id="create-button" type="submit">Create room</button>
+                </form>
+
+                <% if(taken == true){ %>
+                    <P class="alert">Room name already taken!</P>
+                    <% } %>
+                        <h1>Or choose one of the available rooms below</h1>
+            </div>
+
+            <div id="available-rooms">
+
+                <% if(Object.keys(rooms).length > 0){ %>
+                    <div class="available-rooms">
+                        <% Object.keys(rooms).forEach(room => { %>
+                            <a href="/<%= room %>">
+                                <%= room %>
+                            </a>
+                            <% }); %>
+                    </div>
+                    <%} else{ %>
+                        <h3>No available rooms</h3>
+                        <% } %>
+
+            </div>
+
+
+        </main>
+
+
+        <footer class="footer">
+            <b>Copyright &copy; 2020. All rights reserved</b>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.main {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "message-area current-users" "message-bar current-users";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    row-gap: 0.2rem;
+    column-gap: 0.2rem;
+    padding: 0.2rem;
+}
+
+#messages-area {
+    overflow-y: scroll;
+    background-color: whitesmoke;
+    padding: 30px;
+    grid-area: message-area;
+    border-radius: 0.5rem;
+}
+
+#message-bar {
+    background-color: #190061;
+    grid-area: message-bar;
+    border-radius: 0.5rem;
+}
+
+#send-form {
+    height: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#send-button {
+    margin-left: 1rem;
+    flex: 1;
+    height: 8rem;
+    cursor: pointer;
+    background-color: rgb(204, 204, 204);
+    border-radius: 0.5rem;
+}
+
+#message-container {
+    flex: 6;
+    height: 8rem;
+    resize: none;
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+}
+
+#current-users {
+    padding-top: 1rem;
+    background-color: #190061;
+    grid-area: current-users;
+    border-radius: 0.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* new */
+
+a {
+    color: lightgray;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+}
+
+.header {
+    grid-area: header;
+    background-color: #0c0032;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    height: 3rem;
+}
+
+.footer {
+    height: 3rem;
+    background-color: #0c0032;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 3rem;
+    color: lightgray;
+}
+
+
+/* modal */
+
+.modal-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-inner {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+}
+
+.remove-modal {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#name {
+    height: 1.5rem;
+    border-radius: 0.5rem
+}
+
+.modal-button {
+    border-radius: 0.5rem;
+    height: 3rem;
+    width: 6rem;
+}

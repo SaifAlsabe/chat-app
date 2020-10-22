@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-room.css">
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script>
+        const roomName = "<%= roomName %>"
+    </script>
+    <script defer src="room.js"></script>
+    <title>Chat App</title>
+</head>
+
+<body>
+
+    <div class="room-container">
+
+        <header class="header">
+            <h1><a href="/">Linkus</a></h1>
+        </header>
+
+        <main class="main">
+            <div id="current-users">
+                <h3>Online Users:</h3>
+                <div id="online"></div>
+            </div>
+
+            <div id="messages-area"></div>
+
+            <div id="message-bar">
+                <form id="send-form">
+                    <textarea type="text" id="message-container" autocomplete="off"></textarea>
+                    <button type="submit" id="send-button">Send</button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <b>Copyright &copy; 2020. All rights reserved</b>
+        </footer>
+
+        <div class="modal-outer">
+            <div class="modal-inner">
+                <label for="name"><strong>Enter your name</strong></label>
+                <input type="text" name="name" id="name" autocomplete="off" />
+                <button class="modal-button">Submit</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
