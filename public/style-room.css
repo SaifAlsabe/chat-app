@@ -143,4 +143,5 @@ a:hover {
     border-radius: 0.5rem;
     height: 3rem;
     width: 6rem;
+    cursor: pointer;
 }
