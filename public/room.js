@@ -1,3 +1,7 @@
+if (performance.getEntriesByType("navigation")[0].type == 'reload') {
+    window.location = "/";
+}
+
 const socket = io();
 
 const messagesArea = document.getElementById('messages-area');
@@ -9,7 +13,6 @@ const modal = document.querySelector(".modal-outer");
 const userNameInput = document.getElementById('name');
 const userNameSubmit = document.querySelector(".modal-button");
 
-
 //new user
 var name
 userNameSubmit.addEventListener("click", () => {
@@ -17,10 +20,7 @@ userNameSubmit.addEventListener("click", () => {
     modal.classList.add("remove-modal");
     socket.emit('send-new-user', name, roomName);
 });
-// let name = prompt('what is your name?');
-// while (name == '' || name == null) {
-//     name = prompt('please choose a valid name\nwhat is your name?')
-// }
+
 
 socket.on('receive-new-user', (data) => {
     appendMessage(`${data} has joined the chat`);

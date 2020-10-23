@@ -64,11 +64,15 @@ io.on('connect', socket => {
             })
         })
 
-        socket.to(roomName).emit('user-disconnect', rooms[roomName].roomUsers[socket.id]);
-        delete rooms[roomName].roomUsers[socket.id];
-        socket.to(roomName).emit('update-users', Object.values(rooms[roomName].roomUsers));
+        if (rooms[roomName]) {
+            socket.to(roomName).emit('user-disconnect', rooms[roomName].roomUsers[socket.id]);
+            delete rooms[roomName].roomUsers[socket.id];
+            socket.to(roomName).emit('update-users', Object.values(rooms[roomName].roomUsers));
 
-        if (Object.values(rooms[roomName].roomUsers).length === 0) delete rooms[roomName];
+            if (Object.values(rooms[roomName].roomUsers).length === 0) delete rooms[roomName];
+        }
+
+
 
     })
 
