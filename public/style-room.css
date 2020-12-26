@@ -1,35 +1,68 @@
-body {
+* {
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
     position: relative;
-    padding-bottom: 3rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    min-height: 4rem;
+    color: #0275d8;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
 }
 
 .main {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-areas: "message-area current-users" "message-bar current-users";
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 3fr 1fr;
-    row-gap: 0.2rem;
-    column-gap: 0.2rem;
-    padding: 0.2rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    padding: 1rem;
+}
+
+@media (max-width:700px) {
+    .main {
+        min-height: 170vh;
+        grid-template-areas: "message-area" "message-bar" "current-users";
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 1fr 2fr;
+    }
 }
 
 #messages-area {
+    color: #0275d8;
     overflow-y: scroll;
-    background-color: whitesmoke;
+    background-color: white;
     padding: 30px;
     grid-area: message-area;
     border-radius: 0.5rem;
 }
 
 #message-bar {
-    background-color: #190061;
+    color: #0275d8;
+    background-color: #0275d8;
     grid-area: message-bar;
     border-radius: 0.5rem;
 }
 
 #send-form {
+    color: #0275d8;
     height: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -39,6 +72,7 @@ body {
 }
 
 #send-button {
+    color: #0275d8;
     margin-left: 1rem;
     flex: 1;
     height: 8rem;
@@ -48,64 +82,62 @@ body {
 }
 
 #message-container {
+    color: #0275d8;
     flex: 6;
     height: 8rem;
     resize: none;
     background-color: whitesmoke;
     border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#message-container:focus {
+    outline: none;
 }
 
 #current-users {
+    color: white;
     padding-top: 1rem;
-    background-color: #190061;
+    background-color: #0275d8;
     grid-area: current-users;
     border-radius: 0.5rem;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
-
-/* new */
-
-a {
-    color: lightgray;
-    text-decoration: none;
+#current-users div {
+    margin-top: 1rem;
 }
 
-a:hover {
-    color: orange;
-}
 
-.header {
-    grid-area: header;
-    background-color: #0c0032;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 2rem;
-    height: 3rem;
-}
+/* footer */
 
 .footer {
-    height: 3rem;
-    background-color: #0c0032;
+    color: #0275d8;
+    background-color: whitesmoke;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-top: 3rem;
-    color: lightgray;
+    flex-wrap: wrap;
+    min-height: 20rem;
+}
+
+footer div {
+    width: 25rem;
+    margin: 2rem;
+}
+
+li {
+    margin-top: 0.5rem;
 }
 
 
 /* modal */
 
 .modal-outer {
+    color: #0275d8;
     position: fixed;
     top: 0;
     left: 0;
@@ -118,8 +150,8 @@ a:hover {
 }
 
 .modal-inner {
-    width: 30%;
-    height: 30%;
+    width: 20rem;
+    height: 20rem;
     background-color: white;
     border-radius: 1rem;
     display: flex;
@@ -135,11 +167,19 @@ a:hover {
 }
 
 #name {
-    height: 1.5rem;
-    border-radius: 0.5rem
+    border: none;
+    border-bottom: 0.1rem solid gray;
+    margin: 0rem 2rem 0rem 2rem;
+    padding: 0 0 0.5rem 0.5rem;
+    color: rgb(90, 90, 90);
+}
+
+#name:focus {
+    outline: none;
 }
 
 .modal-button {
+    color: #0275d8;
     border-radius: 0.5rem;
     height: 3rem;
     width: 6rem;

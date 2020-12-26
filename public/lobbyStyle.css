@@ -1,65 +1,89 @@
-body {
+* {
+    padding: 0;
     margin: 0;
-    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    color: #0275d8;
+}
+
+ul {
+    list-style: none;
 }
 
 a {
-    color: lightgray;
+    color: inherit;
     text-decoration: none;
 }
 
-a:hover {
-    color: orange;
-}
-
-.lobby-container {
-    display: grid;
-    grid-template-areas: "header" "main" "footer";
-    grid-template-rows: 4rem 1fr 4rem;
-    grid-template-columns: 1fr;
-}
-
 .header {
-    grid-area: header;
-    background-color: #0c0032;
+    min-height: 4rem;
+    background-color: whitesmoke;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding-left: 2rem;
 }
 
 .main {
-    grid-area: main;
-    background-color: rgb(240, 240, 240);
-    min-height: 82.2vh;
+    background-color: white;
+    min-height: calc(100vh - 8rem);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    padding: 2rem 2rem 2rem 20rem;
 }
 
-.footer {
-    grid-area: footer;
-    background-color: #0c0032;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: lightgray;
+img {
+    position: absolute;
+    top: 10rem;
+    left: 3rem;
+    object-fit: cover;
+    width: 30rem;
 }
 
-.intro {
-    flex: 1fr;
+@media (max-width: 1120px) {
+    .main {
+        padding: 2rem;
+    }
+    img {
+        display: none;
+    }
 }
 
-.form-container button,
-.form-container input {
-    border-radius: 0.5rem;
-    height: 1.5rem;
+@media (max-width: 500px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 10rem;
+    }
+}
+
+#room {
+    border: none;
+    border-bottom: 0.1rem solid gray;
+    margin: 0rem 2rem 0rem 2rem;
+    padding: 0 0 0.5rem 0.5rem;
+    color: rgb(90, 90, 90);
+}
+
+#room:focus {
+    outline: none;
 }
 
 .form-container button {
+    border-radius: 0.8rem;
+    padding: 0.5rem;
+}
+
+.form-container button:hover,
+.form-container button:focus {
     cursor: pointer;
+    outline: none;
 }
 
 .available-rooms {
@@ -74,12 +98,13 @@ a:hover {
     border: 0.1rem solid gray;
     border-radius: 0.5rem;
     padding: 1rem;
-    color: black;
+    color: grey;
 }
 
 .available-rooms a:hover {
     background-color: whitesmoke;
     border-color: black;
+    color: #0275d8;
 }
 
 .form-container {
@@ -91,4 +116,22 @@ a:hover {
 
 .alert {
     color: red;
+}
+
+.footer {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 20rem;
+}
+
+footer div {
+    width: 25rem;
+    margin: 2rem;
+}
+
+li {
+    margin-top: 0.5rem;
 }

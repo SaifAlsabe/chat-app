@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style-room.css">
     <script defer src="/socket.io/socket.io.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script>
@@ -11,7 +14,7 @@
         const roomName = "<%= roomName %>"
     </script>
     <script defer src="room.js"></script>
-    <title>Linkus</title>
+    <title>Chatime</title>
 </head>
 
 <body>
@@ -19,7 +22,7 @@
     <div class="room-container">
 
         <header class="header">
-            <h1><a href="/">Linkus</a></h1>
+            <h1><a href="/">Chatime</a></h1>
         </header>
 
         <main class="main">
@@ -39,7 +42,35 @@
         </main>
 
         <footer class="footer">
-            <b>Copyright &copy; 2020. All rights reserved</b>
+            <div>
+                <h3>About Us</h3>
+                <br>
+                <p>We want to help people around the world to connect with each other.</p>
+            </div>
+
+            <div>
+                <h3>Information</h3>
+                <br>
+                <ul>
+                    <li>About Us</li>
+                    <li>More Search</li>
+                    <li>Blog</li>
+                    <li>Events</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Helpful Links</h3>
+                <br>
+                <ul>
+                    <li>Services</li>
+                    <li>Support</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+
+            <div><b>Copyright &copy; 2020. All rights reserved</b></div>
         </footer>
 
         <div class="modal-outer">

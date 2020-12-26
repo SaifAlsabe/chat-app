@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="lobbyStyle.css">
-    <title>Linkus</title>
+    <title>Chatime</title>
 </head>
 
 <body>
@@ -14,35 +17,38 @@
 
 
         <header class="header">
-            <h1><a href="/">Linkus</a></h1>
+            <h1><a href="/">Chatime</a></h1>
         </header>
 
 
         <main class="main">
 
-            <div class="intro">
-                <h1>No need to signup!</h1>
-            </div>
+            <img src="images/chat-1.svg">
+
+            <h1>No need to signup!</h1>
+
+            <h1>Create a room and start chatting</h1>
+
 
             <div class="form-container">
-                <h1>Create a room and start chatting</h1>
                 <form action="/room" method="POST">
-                    <label for="room">Room name:</label>
-                    <input required type="text" name="room" id="room" autocomplete="off" />
+                    <input required type="text" name="room" id="room" autocomplete="off" placeholder="Room Name" />
                     <button id="create-button" type="submit">Create room</button>
                 </form>
 
-                <% if(taken == true){ %>
+                <% if(taken==true){ %>
                     <P class="alert">Room name already taken!</P>
                     <% } %>
-                        <h1>Or choose one of the available rooms below</h1>
             </div>
+
+            <h1>Or choose one of the available rooms below</h1>
+
 
             <div id="available-rooms">
 
-                <% if(Object.keys(rooms).length > 0){ %>
+                <% if(Object.keys(rooms).length> 0){ %>
                     <div class="available-rooms">
-                        <% Object.keys(rooms).forEach(room => { %>
+                        <% Object.keys(rooms).forEach(room=> { %>
                             <a href="/<%= room %>">
                                 <%= room %>
                             </a>
@@ -59,7 +65,35 @@
 
 
         <footer class="footer">
-            <b>Copyright &copy; 2020. All rights reserved</b>
+            <div>
+                <h3>About Us</h3>
+                <br>
+                <p>We want to help people around the world to connect with each other.</p>
+            </div>
+
+            <div>
+                <h3>Information</h3>
+                <br>
+                <ul>
+                    <li>About Us</li>
+                    <li>More Search</li>
+                    <li>Blog</li>
+                    <li>Events</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Helpful Links</h3>
+                <br>
+                <ul>
+                    <li>Services</li>
+                    <li>Support</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+
+            <div><b>Copyright &copy; 2020. All rights reserved</b></div>
         </footer>
 
     </div>
