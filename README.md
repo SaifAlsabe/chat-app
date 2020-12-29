@@ -5,6 +5,7 @@ Linkus is a chat rooms application where you can join a room and start group cha
 ## Demo 
 
 Click [here](https://linkus-chat-app.herokuapp.com/) for live demo.
+![](demo/chatime.png)
 
 ## Installation
 
