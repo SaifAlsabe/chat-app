@@ -1,10 +1,11 @@
 # Linkus
 
-Linkus is a chat rooms application where you can join a room and start group chatting or just create your own room.
+Chatime is a chat application where you can join an existing chat room, create your own room, see online users and send messages using web sockets.
 
 ## Demo 
 
 Click [here](https://linkus-chat-app.herokuapp.com/) for live demo.
+
 ![](demo/chatime.png)
 
 ## Installation
