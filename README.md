@@ -1,4 +1,4 @@
-# Linkus
+# Chatime
 
 Chatime is a chat application where you can join an existing chat room, create your own room, see online users and send messages using web sockets.
 
